@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+</head>
+<body>
+
+<!-- count particles
+<div class="count-particles">
+  <span class="js-count-particles">--</span> particles
+</div> -->
+
+<!-- particles.js container -->
+<div id="particles-js">
+  <div id="text">
+      <h1 class="quotes">placed in motion<br></h1><h1 class="quote2">stay in motion</h1>
+      <h1 class="quotes">make the difference<br></h1><h1 class="quote2">make the motions</h1>
+      <h1 class="quotes">break the path<br></h1><h1 class="quote2">stay devotion</h1>
+      <h1 class="quotes">make the bond<br></h1><h1 class="quote2">fix the broken</h1>
+      <h1 class="quotes">make your way<br></h1><h1 class="quote2">It's wide open</h1>
+      <h1 class="quotes" id="full-text"><a id="title-text">Paths and Particles</a><br><br>
+                         placed in motion<br>stay in motion<br>
+                         make the difference<br>make the motions<br>
+                         break the path<br>stay devotion<br>
+                         make the bond<br>fix the broken<br>
+                         <span id="dog">make your way<br>It's wide open<br></span></h1>
+  </div>
+</div>
+
+<!-- scripts -->
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+(function() {
+
+    var quotes = $(".quotes");
+    var quoteIndex = -1;
+
+    function showNextQuote() {
+        ++quoteIndex;
+        quotes.eq(quoteIndex % quotes.length)
+            .fadeIn(2000)
+            .delay(4000)
+            if(quoteIndex < 5){
+                quotes.eq(quoteIndex % quotes.length).fadeOut(2000, showNextQuote);
+              }
+      }
+    showNextQuote();
+
+})();
+(function() {
+
+    var quote2 = $(".quote2");
+    var quote2Index = -1;
+
+    function showNextQuote2() {
+      if (quote2Index < 4 ){
+        ++quote2Index;
+        quote2.eq(quote2Index % quote2.length)
+            .delay(2000)
+            .fadeIn(2000)
+            .delay(2000)
+            .fadeOut(2000, showNextQuote2);
+          }
+    }
+
+    showNextQuote2();
+
+})();
+</script>
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+
+</body>
+</html>
